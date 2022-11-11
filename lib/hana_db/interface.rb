@@ -1,8 +1,9 @@
+require 'delegate'
 # frozen_string_literal: true
 
 module HanaDB
   # Adds selection methods to database connection
-  class Interface < SimpleDelegator
+  class Interface < ::SimpleDelegator
     def initialize(conn:)
       super(conn)
     end

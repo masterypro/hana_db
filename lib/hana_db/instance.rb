@@ -42,7 +42,7 @@ module HanaDB
                             password: @options.fetch(:password),
                             logger: @options.fetch(:logger))
       @extensions.each do |klass, options|
-        conn = klass.new(options.merge(conn: conn))
+        conn = klass.new(**options.merge(conn: conn))
       end
       Interface.new(conn: conn)
     end

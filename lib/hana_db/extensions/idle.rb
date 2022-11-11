@@ -1,9 +1,10 @@
+require 'delegate'
 # frozen_string_literal: true
 
 module HanaDB
   module Extensions
     # Reconnects to database after idle timeout
-    class IDLE < SimpleDelegator
+    class IDLE < ::SimpleDelegator
       def initialize(conn:, timeout:)
         @timeout = timeout
 
